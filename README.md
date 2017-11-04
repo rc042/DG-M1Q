@@ -43,7 +43,7 @@ To delete the default gateway, I edited _/npc/dhcp.script_ and add  _/sbin/ip ro
 There are a better way but it works.
 
 I use a VPN to connect to the stream and an application on my phone:
-*rtsp://my-ip:554/onvif1 (UDP with the credentials I congigured)
+_rtsp://my-ip:554/onvif1_ (UDP with the credentials I congigured)
 
 As a lot of people said, this camera must not be on the Internet for security and privacy reasons.
 
@@ -53,3 +53,4 @@ If you can, you must dedicated a vlan for this kind of devices with strong restr
 * https://github.com/yuvadm/DG-M1Q
 * https://github.com/kfowlks/DG-M1Q
 * http://adamwesterberg.se/blog/cheap-chinese-camera-teardown
+* https://jumpespjump.blogspot.com/2015/09/how-i-hacked-my-ip-camera-and-found.html?m=1
