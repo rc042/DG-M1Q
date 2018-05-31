@@ -1,16 +1,25 @@
-# DG-M1Q
+# Intro
 
 This is a personal note I want to share.
 
 Some tips to limited the exposition of the cam DG-M1Q.
 
+I have 2 version:
+
+The old one:
+![Old](https://raw.githubusercontent.com/reedcrif/DG-M1Q/master/old_cam.jpg)
+
+The new one
+![New](https://raw.githubusercontent.com/reedcrif/DG-M1Q/master/new_cam.jpg)
+
+# DG-M1Q (older version)
 1- Block the access to the Internet. The default route will be deleted, the cam will not be able to connect to the Internet.
 
 2- Add a user with a password and remove root
 
 3- Disable telnet after 1 minute
 
-# Steps
+## Steps
 The first configuration was made with the DigooEye app. Once done, I will not use this app anymore (maybe to check some update) and use another app (like Onvifer on the Play Store).
 
 Edit: I buy a serial adapter and we must configure the network without the DigooEye app (not tested).
@@ -57,7 +66,7 @@ As a lot of people said, this camera must not be on the Internet for security an
 
 If you can, you must dedicated a vlan for this kind of devices with strong restrictions.
 
-# Tips
+## Tips
 I removed accidentally some files in _/npc_ and I forgot to make a backup. 
 
 Output serial console logs:
@@ -80,8 +89,43 @@ There is a _/bak_ folder with the _npc.tar.gz_ file.
 We need to copy _/bak/npc.tar.gz_ to _/tmp_, then gunzip and tar the archive. Last, move the file to _/npc_ and edit the file as needed.
 
 
-# Reference
+## Reference
 * https://github.com/yuvadm/DG-M1Q
 * https://github.com/kfowlks/DG-M1Q
 * http://adamwesterberg.se/blog/cheap-chinese-camera-teardown
 * https://jumpespjump.blogspot.com/2015/09/how-i-hacked-my-ip-camera-and-found.html?m=1
+
+# DG-M1Q (newer version)
+Serial connection is the same as the older cam.
+
+Telnet is activated and credentials are:
+```
+login: root
+password: cxlinux
+```
+
+Logs for the 1st boot: https://github.com/reedcrif/DG-M1Q/blob/master/boot.log
+
+Persistent folder is _/home_
+
+```
+# mount
+rootfs on / type rootfs (rw)
+/dev/sys on /sys type sysfs (rw,relatime)
+proc on /proc type proc (rw,relatime)
+tmpfs on /dev type tmpfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,mode=600,ptmxmode=000)
+/dev/mtdblock2 on /home type jffs2 (rw,relatime)
+
+```
+
+Next step: try to setup the cam without the Digoo-Cloud app. Once the cam is configured, you can remove the default gateway:
+
+```
+route delete default gw [IP_DEFAULT_GW]
+```
+
+Access to the stream: _rtsp://MY_IP_CAM:554/onvif1_
+
+Login is _admin_ with no password
