@@ -88,13 +88,6 @@ There is a _/bak_ folder with the _npc.tar.gz_ file.
 
 We need to copy _/bak/npc.tar.gz_ to _/tmp_, then gunzip and tar the archive. Last, move the file to _/npc_ and edit the file as needed.
 
-
-## Reference
-* https://github.com/yuvadm/DG-M1Q
-* https://github.com/kfowlks/DG-M1Q
-* http://adamwesterberg.se/blog/cheap-chinese-camera-teardown
-* https://jumpespjump.blogspot.com/2015/09/how-i-hacked-my-ip-camera-and-found.html?m=1
-
 # DG-M1Q (newer version)
 Serial connection is the same as the older cam.
 
@@ -129,3 +122,10 @@ route delete default gw [IP_DEFAULT_GW]
 Access to the stream: _rtsp://MY_IP_CAM:554/onvif1_
 
 Login is _admin_ with no password
+
+# Reference
+* https://github.com/yuvadm/DG-M1Q
+* https://github.com/kfowlks/DG-M1Q
+* http://adamwesterberg.se/blog/cheap-chinese-camera-teardown
+* https://jumpespjump.blogspot.com/2015/09/how-i-hacked-my-ip-camera-and-found.html?m=1
+* https://github.com/ant-thomas/zsgx1hacks
