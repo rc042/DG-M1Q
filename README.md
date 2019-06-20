@@ -30,6 +30,8 @@ Here a quick and dirty connection but works like a charm!
 
 ![Quick and dirty connection](https://raw.githubusercontent.com/reedcrif/DG-M1Q/master/20180530_160005.jpg)
 
+To enable telnet, you must configure your serial terminal (Putty, e.g.) with a baud rate of 115200. After connecting in, just use this command and reboot after that: echo '/bin/busybox telnetd' >> /npc/boot.sh
+
 I retreive the IP address within the app and I connect to it with telnet (you can do this in a serial console like Putty).
 
 Default login is root without password.
